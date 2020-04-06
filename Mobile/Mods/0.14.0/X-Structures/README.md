@@ -1,4 +1,4 @@
-<title>X-Structures</title>
+<h1>X-Structures</h1>
 
 <h2>About</h2>
 
