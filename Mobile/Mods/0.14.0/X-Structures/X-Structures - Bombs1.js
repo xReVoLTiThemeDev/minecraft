@@ -20,7 +20,7 @@ function newLevel(){
 
 var structureSelectorId = 2001
 var structureBuilderId = 2002
-var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var root = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var textsize = 12
 var structure
 var firstStructure
@@ -440,24 +440,6 @@ if(cmd == "xstructure ids")
     }
 }
 
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
-
-//Check for an item being used
 function useItem(x,y,z,itemId,blockId,side){
 	if(itemId == structureSelectorId){
 		BombGUI()
@@ -488,36 +470,18 @@ function useItem(x,y,z,itemId,blockId,side){
 }
 
 function BombGUI(){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var menu = new android.widget.LinearLayout(ctx);
-				var scroll = new android.widget.ScrollView(ctx);
+				var menu = new android.widget.LinearLayout(root);
+				var scroll = new android.widget.ScrollView(root);
 				menu.setOrientation(android.widget.LinearLayout.VERTICAL);
 				scroll.addView(menu);
-				var dialog = new android.app.Dialog(ctx); 
+				var dialog = new android.app.Dialog(root); 
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure to spawn")
-/*
-				var  House = new android.widget.Button(ctx); 
-				House.setOnClickListener(new android.view.View.OnClickListener(){
-					onClick: function(){ 
-						try{
-							dialog.dismiss();
-							structure = 1
-							clientMessage("§4X§f-§bStructure §aRecieved!")
-						}
-						catch(e){
-							clientMessage("Error: "+e)
-						}
-					}
-				})
-				House.setText("House1")
-				House.setTextSize(textsize)
-				menu.addView(House);
-*/
 /* 7 */
-                var  Bomb1 = new android.widget.Button(ctx); 
+                var  Bomb1 = new android.widget.Button(root); 
 				Bomb1.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -534,7 +498,7 @@ function BombGUI(){
 				Bomb1.setTextSize(textsize)
 				menu.addView(Bomb1);
 /* 8 */
-				var  Bomb2 = new android.widget.Button(ctx); 
+				var  Bomb2 = new android.widget.Button(root); 
 				Bomb2.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -551,7 +515,7 @@ function BombGUI(){
 				Bomb2.setTextSize(textsize)
 				menu.addView(Bomb2);
 /* 9 */
-				var  Bomb3 = new android.widget.Button(ctx); 
+				var  Bomb3 = new android.widget.Button(root); 
 				Bomb3.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -568,7 +532,7 @@ function BombGUI(){
 				Bomb3.setTextSize(textsize)
 				menu.addView(Bomb3);
 /* 10 */
-				var  Bomb4 = new android.widget.Button(ctx); 
+				var  Bomb4 = new android.widget.Button(root); 
 				Bomb4.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -585,7 +549,7 @@ function BombGUI(){
 				Bomb4.setTextSize(textsize)
 				menu.addView(Bomb4);
 /* 11 */
-				var  MOAB = new android.widget.Button(ctx); 
+				var  MOAB = new android.widget.Button(root); 
 				MOAB.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -611,10 +575,10 @@ function BombGUI(){
 }
 
 function Bomb1GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -652,10 +616,10 @@ function Bomb1GUI(x,y,z){
 }
 
 function Bomb2GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -693,10 +657,10 @@ function Bomb2GUI(x,y,z){
 }
 
 function Bomb3GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -734,10 +698,10 @@ function Bomb3GUI(x,y,z){
 }
 
 function Bomb4GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -775,10 +739,10 @@ function Bomb4GUI(x,y,z){
 }
 
 function MOABGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){

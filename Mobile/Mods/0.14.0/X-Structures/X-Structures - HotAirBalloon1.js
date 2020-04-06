@@ -21,17 +21,10 @@ function newLevel(){
 
 var structureSelectorId = 1801
 var structureBuilderId = 1802
-var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var root = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var textsize = 12
 var structure
 var firstStructure
-
-/*
-var directory = new android.graphics.BitmapFactory.decodeFile("/mnt/sdcard/Modz/xReVoLTsLogo.jpg");
-var img = new android.graphics.drawable.BitmapDrawable(directory);
-var image = new android.widget.ImageView(ctx);
-var buttonWindow = null;
-*/
 
 ModPE.setItem(structureSelectorId,"spawn_egg",7,"X-Structure - HotAirBalloon1")
 ModPE.setItem(structureBuilderId,"spawn_egg",5,"Structure HotAirBalloon1")
@@ -39,23 +32,6 @@ Player.addItemCreativeInv(structureSelectorId,1,0)
 Player.addItemCreativeInv(structureBuilderId,1,0)
 Item.addCraftRecipe(structureSelectorId,1,0,[265,4,0,264,1,0,265,4,0])
 Item.addCraftRecipe(structureBuilderId,1,0,[265,3,0,264,1,0,265,1,0,264,1,0,265,3,0])
-
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
 
 function procCmd(cmd)
 {
@@ -523,32 +499,24 @@ function useItem(x,y,z,itemId,blockId,side){
         else if(structure == 37) HotAirBalloon35GUI(x,y,z)
         else if(structure == 38) HotAirBalloon36GUI(x,y,z)
         else if(structure == 39) HotAirBalloon37GUI(x,y,z)
-/*
-        else if(structure == ) GUI(x,y,z)
-*/
 
  	}
 }
 
 function housesGUI(){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var menu = new android.widget.LinearLayout(ctx);
-				var scroll = new android.widget.ScrollView(ctx);
+				var menu = new android.widget.LinearLayout(root);
+				var scroll = new android.widget.ScrollView(root);
 				menu.setOrientation(android.widget.LinearLayout.VERTICAL);
 				scroll.addView(menu);
-				var dialog = new android.app.Dialog(ctx);
+				var dialog = new android.app.Dialog(root);
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure")
-/*
-                buttonWindow = new android.widget.PopupWindow()
-                image.setBitmap(img);
-                buttonWindow.setTouchable(false);
-*/
 
 
-/* 1 */	var  HotAirBalloon1 = new android.widget.Button(ctx);
+/* 1 */	var  HotAirBalloon1 = new android.widget.Button(root);
 				HotAirBalloon1.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -566,7 +534,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon1);
 
 
-/* 2 */	var  HotAirBalloon2 = new android.widget.Button(ctx);
+/* 2 */	var  HotAirBalloon2 = new android.widget.Button(root);
 				HotAirBalloon2.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -584,7 +552,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon2);
 
 
-/* 3 */	var  HotAirBalloon3 = new android.widget.Button(ctx);
+/* 3 */	var  HotAirBalloon3 = new android.widget.Button(root);
 				HotAirBalloon3.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -602,7 +570,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon3);
 
 
-/* 5 */	var  HotAirBalloon4 = new android.widget.Button(ctx);
+/* 5 */	var  HotAirBalloon4 = new android.widget.Button(root);
 				HotAirBalloon4.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -620,7 +588,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon4);
 
 
-/* 6 */	var  HotAirBalloon5 = new android.widget.Button(ctx);
+/* 6 */	var  HotAirBalloon5 = new android.widget.Button(root);
 				HotAirBalloon5.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -638,7 +606,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon5);
 
 
-/* 7 */	var  HotAirBalloon6 = new android.widget.Button(ctx);
+/* 7 */	var  HotAirBalloon6 = new android.widget.Button(root);
 				HotAirBalloon6.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -656,7 +624,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon6);
 
 
-/* 8 */	var  HotAirBalloon7 = new android.widget.Button(ctx);
+/* 8 */	var  HotAirBalloon7 = new android.widget.Button(root);
 				HotAirBalloon7.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -674,7 +642,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon7);
 
 
-/* 9 */	var  HotAirBalloon9 = new android.widget.Button(ctx);
+/* 9 */	var  HotAirBalloon9 = new android.widget.Button(root);
 				HotAirBalloon9.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -692,7 +660,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon9);
 
 
-/* 10 */	var  HotAirBalloon10 = new android.widget.Button(ctx);
+/* 10 */	var  HotAirBalloon10 = new android.widget.Button(root);
 				HotAirBalloon10.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -710,7 +678,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon10);
 
 
-/* 11 */	var  HotAirBalloon11 = new android.widget.Button(ctx);
+/* 11 */	var  HotAirBalloon11 = new android.widget.Button(root);
 				HotAirBalloon11.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -728,7 +696,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon11);
 
 
-/* 12 */	var  HotAirBalloon12 = new android.widget.Button(ctx);
+/* 12 */	var  HotAirBalloon12 = new android.widget.Button(root);
 				HotAirBalloon12.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -746,7 +714,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon12);
 
 
-/* 13 */	var  HotAirBalloon13 = new android.widget.Button(ctx);
+/* 13 */	var  HotAirBalloon13 = new android.widget.Button(root);
 				HotAirBalloon13.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -764,7 +732,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon13);
 
 
-/* 14 */	var  HotAirBalloon14 = new android.widget.Button(ctx);
+/* 14 */	var  HotAirBalloon14 = new android.widget.Button(root);
 				HotAirBalloon14.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -782,7 +750,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon14);
 
 
-/* 15 */	var  HotAirBalloon15 = new android.widget.Button(ctx);
+/* 15 */	var  HotAirBalloon15 = new android.widget.Button(root);
 				HotAirBalloon15.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -800,7 +768,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon15);
 
 
-/* 16 */	var  HotAirBalloon16 = new android.widget.Button(ctx);
+/* 16 */	var  HotAirBalloon16 = new android.widget.Button(root);
 				HotAirBalloon16.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -818,7 +786,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon16);
 
 
-/* 17 */	var  HotAirBalloon17 = new android.widget.Button(ctx);
+/* 17 */	var  HotAirBalloon17 = new android.widget.Button(root);
 				HotAirBalloon17.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -836,7 +804,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon17);
 
 
-/* 18 */	var  HotAirBalloon18 = new android.widget.Button(ctx);
+/* 18 */	var  HotAirBalloon18 = new android.widget.Button(root);
 				HotAirBalloon18.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -854,7 +822,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon18);
 
 
-/* 19 */	var  HotAirBalloon19 = new android.widget.Button(ctx);
+/* 19 */	var  HotAirBalloon19 = new android.widget.Button(root);
 				HotAirBalloon19.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -872,7 +840,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon19);
 
 
-/* 20 */	var  HotAirBalloon20 = new android.widget.Button(ctx);
+/* 20 */	var  HotAirBalloon20 = new android.widget.Button(root);
 				HotAirBalloon20.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -890,7 +858,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon20);
 
 
-/* 22 */	var  HotAirBalloon21 = new android.widget.Button(ctx);
+/* 22 */	var  HotAirBalloon21 = new android.widget.Button(root);
 				HotAirBalloon21.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -908,7 +876,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon21);
 
 
-/* 23 */	var  HotAirBalloon22 = new android.widget.Button(ctx);
+/* 23 */	var  HotAirBalloon22 = new android.widget.Button(root);
 				HotAirBalloon22.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -926,7 +894,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon22);
 
 
-/* 24 */	var  HotAirBalloon23 = new android.widget.Button(ctx);
+/* 24 */	var  HotAirBalloon23 = new android.widget.Button(root);
 				HotAirBalloon23.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -944,7 +912,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon23);
 
 
-/* 25 */	var  HotAirBalloon24 = new android.widget.Button(ctx);
+/* 25 */	var  HotAirBalloon24 = new android.widget.Button(root);
 				HotAirBalloon24.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -962,7 +930,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon24);
 
 
-/* 26 */	var  HotAirBalloon25 = new android.widget.Button(ctx);
+/* 26 */	var  HotAirBalloon25 = new android.widget.Button(root);
 				HotAirBalloon25.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -980,7 +948,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon25);
 
 
-/* 28 */	var  HotAirBalloon26 = new android.widget.Button(ctx);
+/* 28 */	var  HotAirBalloon26 = new android.widget.Button(root);
 				HotAirBalloon26.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -998,7 +966,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon26);
 
 
-/* 29 */	var  HotAirBalloon27 = new android.widget.Button(ctx);
+/* 29 */	var  HotAirBalloon27 = new android.widget.Button(root);
 				HotAirBalloon27.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1016,7 +984,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon27);
 
 
-/* 30 */	var  HotAirBalloon28 = new android.widget.Button(ctx);
+/* 30 */	var  HotAirBalloon28 = new android.widget.Button(root);
 				HotAirBalloon28.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1034,7 +1002,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon28);
 
 
-/* 31 */	var  HotAirBalloon29 = new android.widget.Button(ctx);
+/* 31 */	var  HotAirBalloon29 = new android.widget.Button(root);
 				HotAirBalloon29.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1052,7 +1020,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon29);
 
 
-/* 32 */	var  HotAirBalloon30 = new android.widget.Button(ctx);
+/* 32 */	var  HotAirBalloon30 = new android.widget.Button(root);
 				HotAirBalloon30.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1070,7 +1038,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon30);
 
 
-/* 33 */	var  HotAirBalloon31 = new android.widget.Button(ctx);
+/* 33 */	var  HotAirBalloon31 = new android.widget.Button(root);
 				HotAirBalloon31.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1088,7 +1056,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon31);
 
 
-/* 34 */	var  HotAirBalloon32 = new android.widget.Button(ctx);
+/* 34 */	var  HotAirBalloon32 = new android.widget.Button(root);
 				HotAirBalloon32.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1106,7 +1074,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon32);
 
 
-/* 35 */	var  HotAirBalloon33 = new android.widget.Button(ctx);
+/* 35 */	var  HotAirBalloon33 = new android.widget.Button(root);
 				HotAirBalloon33.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1124,7 +1092,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon33);
 
 
-/* 36 */	var  HotAirBalloon34 = new android.widget.Button(ctx);
+/* 36 */	var  HotAirBalloon34 = new android.widget.Button(root);
 				HotAirBalloon34.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1142,7 +1110,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon34);
 
 
-/* 37 */	var  HotAirBalloon35 = new android.widget.Button(ctx);
+/* 37 */	var  HotAirBalloon35 = new android.widget.Button(root);
 				HotAirBalloon35.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1160,7 +1128,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon35);
 
 
-/* 38 */	var  HotAirBalloon36 = new android.widget.Button(ctx);
+/* 38 */	var  HotAirBalloon36 = new android.widget.Button(root);
 				HotAirBalloon36.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1178,7 +1146,7 @@ function housesGUI(){
 				menu.addView(HotAirBalloon36);
 
 
-/* 39 */	var  HotAirBalloon37 = new android.widget.Button(ctx);
+/* 39 */	var  HotAirBalloon37 = new android.widget.Button(root);
 				HotAirBalloon37.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1206,10 +1174,10 @@ function housesGUI(){
 
 
 function HotAirBalloon1GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 60){
@@ -1249,10 +1217,10 @@ function HotAirBalloon1GUI(x,y,z){
 
 
 function HotAirBalloon2GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1292,10 +1260,10 @@ function HotAirBalloon2GUI(x,y,z){
 
 
 function HotAirBalloon3GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1335,10 +1303,10 @@ function HotAirBalloon3GUI(x,y,z){
 
 
 function HotAirBalloon4GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1378,10 +1346,10 @@ function HotAirBalloon4GUI(x,y,z){
 
 
 function HotAirBalloon5GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1421,10 +1389,10 @@ function HotAirBalloon5GUI(x,y,z){
 
 
 function HotAirBalloon6GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1464,10 +1432,10 @@ function HotAirBalloon6GUI(x,y,z){
 
 
 function HotAirBalloon7GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1507,10 +1475,10 @@ function HotAirBalloon7GUI(x,y,z){
 
 
 function HotAirBalloon9GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1550,10 +1518,10 @@ function HotAirBalloon9GUI(x,y,z){
 
 
 function HotAirBalloon10GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1593,10 +1561,10 @@ function HotAirBalloon10GUI(x,y,z){
 
 
 function HotAirBalloon11GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1636,10 +1604,10 @@ function HotAirBalloon11GUI(x,y,z){
 
 
 function HotAirBalloon12GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1679,10 +1647,10 @@ function HotAirBalloon12GUI(x,y,z){
 
 
 function HotAirBalloon13GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1722,10 +1690,10 @@ function HotAirBalloon13GUI(x,y,z){
 
 
 function HotAirBalloon14GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1765,10 +1733,10 @@ function HotAirBalloon14GUI(x,y,z){
 
 
 function HotAirBalloon15GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1808,10 +1776,10 @@ function HotAirBalloon15GUI(x,y,z){
 
 
 function HotAirBalloon16GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1851,10 +1819,10 @@ function HotAirBalloon16GUI(x,y,z){
 
 
 function HotAirBalloon17GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1894,10 +1862,10 @@ function HotAirBalloon17GUI(x,y,z){
 
 
 function HotAirBalloon18GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1937,10 +1905,10 @@ function HotAirBalloon18GUI(x,y,z){
 
 
 function HotAirBalloon19GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1980,10 +1948,10 @@ function HotAirBalloon19GUI(x,y,z){
 
 
 function HotAirBalloon20GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2023,10 +1991,10 @@ function HotAirBalloon20GUI(x,y,z){
 
 
 function HotAirBalloon21GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2066,10 +2034,10 @@ function HotAirBalloon21GUI(x,y,z){
 
 
 function HotAirBalloon22GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2109,10 +2077,10 @@ function HotAirBalloon22GUI(x,y,z){
 
 
 function HotAirBalloon23GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2152,10 +2120,10 @@ function HotAirBalloon23GUI(x,y,z){
 
 
 function HotAirBalloon24GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2195,10 +2163,10 @@ function HotAirBalloon24GUI(x,y,z){
 
 
 function HotAirBalloon25GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2238,10 +2206,10 @@ function HotAirBalloon25GUI(x,y,z){
 
 
 function HotAirBalloon26GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2281,10 +2249,10 @@ function HotAirBalloon26GUI(x,y,z){
 
 
 function HotAirBalloon27GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2324,10 +2292,10 @@ function HotAirBalloon27GUI(x,y,z){
 
 
 function HotAirBalloon28GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2367,10 +2335,10 @@ function HotAirBalloon28GUI(x,y,z){
 
 
 function HotAirBalloon29GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2410,10 +2378,10 @@ function HotAirBalloon29GUI(x,y,z){
 
 
 function HotAirBalloon30GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){

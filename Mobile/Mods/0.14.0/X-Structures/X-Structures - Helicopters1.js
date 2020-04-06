@@ -21,17 +21,10 @@ function newLevel(){
 
 var structureSelectorId = 1601
 var structureBuilderId = 1602
-var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var root = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var textsize = 12
 var structure
 var firstStructure
-
-/*
-var directory = new android.graphics.BitmapFactory.decodeFile("/mnt/sdcard/Modz/xReVoLTsLogo.jpg");
-var img = new android.graphics.drawable.BitmapDrawable(directory);
-var image = new android.widget.ImageView(ctx);
-var buttonWindow = null;
-*/
 
 ModPE.setItem(structureSelectorId,"spawn_egg",7,"X-Structure - Helicopter1")
 ModPE.setItem(structureBuilderId,"spawn_egg",5,"Structure Helicopter1")
@@ -39,23 +32,6 @@ Player.addItemCreativeInv(structureSelectorId,1,0)
 Player.addItemCreativeInv(structureBuilderId,1,0)
 Item.addCraftRecipe(structureSelectorId,1,0,[265,4,0,264,1,0,265,4,0])
 Item.addCraftRecipe(structureBuilderId,1,0,[265,3,0,264,1,0,265,1,0,264,1,0,265,3,0])
-
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
 
 function procCmd(cmd)
 {
@@ -523,32 +499,23 @@ function useItem(x,y,z,itemId,blockId,side){
         else if(structure == 37) Helicopter35GUI(x,y,z)
         else if(structure == 38) Helicopter36GUI(x,y,z)
         else if(structure == 39) Helicopter37GUI(x,y,z)
-/*
-        else if(structure == ) GUI(x,y,z)
-*/
-
  	}
 }
 
 function housesGUI(){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var menu = new android.widget.LinearLayout(ctx);
-				var scroll = new android.widget.ScrollView(ctx);
+				var menu = new android.widget.LinearLayout(root);
+				var scroll = new android.widget.ScrollView(root);
 				menu.setOrientation(android.widget.LinearLayout.VERTICAL);
 				scroll.addView(menu);
-				var dialog = new android.app.Dialog(ctx);
+				var dialog = new android.app.Dialog(root);
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure")
-/*
-                buttonWindow = new android.widget.PopupWindow()
-                image.setBitmap(img);
-                buttonWindow.setTouchable(false);
-*/
 
 
-/* 1 */	var  Helicopter1 = new android.widget.Button(ctx);
+/* 1 */	var  Helicopter1 = new android.widget.Button(root);
 				Helicopter1.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -566,7 +533,7 @@ function housesGUI(){
 				menu.addView(Helicopter1);
 
 
-/* 2 */	var  Helicopter2 = new android.widget.Button(ctx);
+/* 2 */	var  Helicopter2 = new android.widget.Button(root);
 				Helicopter2.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -584,7 +551,7 @@ function housesGUI(){
 				menu.addView(Helicopter2);
 
 
-/* 3 */	var  Helicopter3 = new android.widget.Button(ctx);
+/* 3 */	var  Helicopter3 = new android.widget.Button(root);
 				Helicopter3.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -602,7 +569,7 @@ function housesGUI(){
 				menu.addView(Helicopter3);
 
 
-/* 5 */	var  Helicopter4 = new android.widget.Button(ctx);
+/* 5 */	var  Helicopter4 = new android.widget.Button(root);
 				Helicopter4.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -620,7 +587,7 @@ function housesGUI(){
 				menu.addView(Helicopter4);
 
 
-/* 6 */	var  Helicopter5 = new android.widget.Button(ctx);
+/* 6 */	var  Helicopter5 = new android.widget.Button(root);
 				Helicopter5.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -638,7 +605,7 @@ function housesGUI(){
 				menu.addView(Helicopter5);
 
 
-/* 7 */	var  Helicopter6 = new android.widget.Button(ctx);
+/* 7 */	var  Helicopter6 = new android.widget.Button(root);
 				Helicopter6.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -656,7 +623,7 @@ function housesGUI(){
 				menu.addView(Helicopter6);
 
 
-/* 8 */	var  Helicopter7 = new android.widget.Button(ctx);
+/* 8 */	var  Helicopter7 = new android.widget.Button(root);
 				Helicopter7.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -674,7 +641,7 @@ function housesGUI(){
 				menu.addView(Helicopter7);
 
 
-/* 9 */	var  Helicopter9 = new android.widget.Button(ctx);
+/* 9 */	var  Helicopter9 = new android.widget.Button(root);
 				Helicopter9.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -692,7 +659,7 @@ function housesGUI(){
 				menu.addView(Helicopter9);
 
 
-/* 10 */	var  Helicopter10 = new android.widget.Button(ctx);
+/* 10 */	var  Helicopter10 = new android.widget.Button(root);
 				Helicopter10.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -710,7 +677,7 @@ function housesGUI(){
 				menu.addView(Helicopter10);
 
 
-/* 11 */	var  Helicopter11 = new android.widget.Button(ctx);
+/* 11 */	var  Helicopter11 = new android.widget.Button(root);
 				Helicopter11.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -728,7 +695,7 @@ function housesGUI(){
 				menu.addView(Helicopter11);
 
 
-/* 12 */	var  Helicopter12 = new android.widget.Button(ctx);
+/* 12 */	var  Helicopter12 = new android.widget.Button(root);
 				Helicopter12.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -746,7 +713,7 @@ function housesGUI(){
 				menu.addView(Helicopter12);
 
 
-/* 13 */	var  Helicopter13 = new android.widget.Button(ctx);
+/* 13 */	var  Helicopter13 = new android.widget.Button(root);
 				Helicopter13.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -764,7 +731,7 @@ function housesGUI(){
 				menu.addView(Helicopter13);
 
 
-/* 14 */	var  Helicopter14 = new android.widget.Button(ctx);
+/* 14 */	var  Helicopter14 = new android.widget.Button(root);
 				Helicopter14.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -782,7 +749,7 @@ function housesGUI(){
 				menu.addView(Helicopter14);
 
 
-/* 15 */	var  Helicopter15 = new android.widget.Button(ctx);
+/* 15 */	var  Helicopter15 = new android.widget.Button(root);
 				Helicopter15.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -800,7 +767,7 @@ function housesGUI(){
 				menu.addView(Helicopter15);
 
 
-/* 16 */	var  Helicopter16 = new android.widget.Button(ctx);
+/* 16 */	var  Helicopter16 = new android.widget.Button(root);
 				Helicopter16.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -818,7 +785,7 @@ function housesGUI(){
 				menu.addView(Helicopter16);
 
 
-/* 17 */	var  Helicopter17 = new android.widget.Button(ctx);
+/* 17 */	var  Helicopter17 = new android.widget.Button(root);
 				Helicopter17.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -836,7 +803,7 @@ function housesGUI(){
 				menu.addView(Helicopter17);
 
 
-/* 18 */	var  Helicopter18 = new android.widget.Button(ctx);
+/* 18 */	var  Helicopter18 = new android.widget.Button(root);
 				Helicopter18.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -854,7 +821,7 @@ function housesGUI(){
 				menu.addView(Helicopter18);
 
 
-/* 19 */	var  Helicopter19 = new android.widget.Button(ctx);
+/* 19 */	var  Helicopter19 = new android.widget.Button(root);
 				Helicopter19.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -872,7 +839,7 @@ function housesGUI(){
 				menu.addView(Helicopter19);
 
 
-/* 20 */	var  Helicopter20 = new android.widget.Button(ctx);
+/* 20 */	var  Helicopter20 = new android.widget.Button(root);
 				Helicopter20.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -890,7 +857,7 @@ function housesGUI(){
 				menu.addView(Helicopter20);
 
 
-/* 22 */	var  Helicopter21 = new android.widget.Button(ctx);
+/* 22 */	var  Helicopter21 = new android.widget.Button(root);
 				Helicopter21.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -908,7 +875,7 @@ function housesGUI(){
 				menu.addView(Helicopter21);
 
 
-/* 23 */	var  Helicopter22 = new android.widget.Button(ctx);
+/* 23 */	var  Helicopter22 = new android.widget.Button(root);
 				Helicopter22.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -926,7 +893,7 @@ function housesGUI(){
 				menu.addView(Helicopter22);
 
 
-/* 24 */	var  Helicopter23 = new android.widget.Button(ctx);
+/* 24 */	var  Helicopter23 = new android.widget.Button(root);
 				Helicopter23.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -944,7 +911,7 @@ function housesGUI(){
 				menu.addView(Helicopter23);
 
 
-/* 25 */	var  Helicopter24 = new android.widget.Button(ctx);
+/* 25 */	var  Helicopter24 = new android.widget.Button(root);
 				Helicopter24.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -962,7 +929,7 @@ function housesGUI(){
 				menu.addView(Helicopter24);
 
 
-/* 26 */	var  Helicopter25 = new android.widget.Button(ctx);
+/* 26 */	var  Helicopter25 = new android.widget.Button(root);
 				Helicopter25.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -980,7 +947,7 @@ function housesGUI(){
 				menu.addView(Helicopter25);
 
 
-/* 28 */	var  Helicopter26 = new android.widget.Button(ctx);
+/* 28 */	var  Helicopter26 = new android.widget.Button(root);
 				Helicopter26.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -998,7 +965,7 @@ function housesGUI(){
 				menu.addView(Helicopter26);
 
 
-/* 29 */	var  Helicopter27 = new android.widget.Button(ctx);
+/* 29 */	var  Helicopter27 = new android.widget.Button(root);
 				Helicopter27.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1016,7 +983,7 @@ function housesGUI(){
 				menu.addView(Helicopter27);
 
 
-/* 30 */	var  Helicopter28 = new android.widget.Button(ctx);
+/* 30 */	var  Helicopter28 = new android.widget.Button(root);
 				Helicopter28.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1034,7 +1001,7 @@ function housesGUI(){
 				menu.addView(Helicopter28);
 
 
-/* 31 */	var  Helicopter29 = new android.widget.Button(ctx);
+/* 31 */	var  Helicopter29 = new android.widget.Button(root);
 				Helicopter29.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1052,7 +1019,7 @@ function housesGUI(){
 				menu.addView(Helicopter29);
 
 
-/* 32 */	var  Helicopter30 = new android.widget.Button(ctx);
+/* 32 */	var  Helicopter30 = new android.widget.Button(root);
 				Helicopter30.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1070,7 +1037,7 @@ function housesGUI(){
 				menu.addView(Helicopter30);
 
 
-/* 33 */	var  Helicopter31 = new android.widget.Button(ctx);
+/* 33 */	var  Helicopter31 = new android.widget.Button(root);
 				Helicopter31.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1088,7 +1055,7 @@ function housesGUI(){
 				menu.addView(Helicopter31);
 
 
-/* 34 */	var  Helicopter32 = new android.widget.Button(ctx);
+/* 34 */	var  Helicopter32 = new android.widget.Button(root);
 				Helicopter32.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1106,7 +1073,7 @@ function housesGUI(){
 				menu.addView(Helicopter32);
 
 
-/* 35 */	var  Helicopter33 = new android.widget.Button(ctx);
+/* 35 */	var  Helicopter33 = new android.widget.Button(root);
 				Helicopter33.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1124,7 +1091,7 @@ function housesGUI(){
 				menu.addView(Helicopter33);
 
 
-/* 36 */	var  Helicopter34 = new android.widget.Button(ctx);
+/* 36 */	var  Helicopter34 = new android.widget.Button(root);
 				Helicopter34.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1142,7 +1109,7 @@ function housesGUI(){
 				menu.addView(Helicopter34);
 
 
-/* 37 */	var  Helicopter35 = new android.widget.Button(ctx);
+/* 37 */	var  Helicopter35 = new android.widget.Button(root);
 				Helicopter35.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1160,7 +1127,7 @@ function housesGUI(){
 				menu.addView(Helicopter35);
 
 
-/* 38 */	var  Helicopter36 = new android.widget.Button(ctx);
+/* 38 */	var  Helicopter36 = new android.widget.Button(root);
 				Helicopter36.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1178,7 +1145,7 @@ function housesGUI(){
 				menu.addView(Helicopter36);
 
 
-/* 39 */	var  Helicopter37 = new android.widget.Button(ctx);
+/* 39 */	var  Helicopter37 = new android.widget.Button(root);
 				Helicopter37.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){
 						try{
@@ -1206,10 +1173,10 @@ function housesGUI(){
 
 
 function Helicopter1GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 60){
@@ -1249,10 +1216,10 @@ function Helicopter1GUI(x,y,z){
 
 
 function Helicopter2GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1292,10 +1259,10 @@ function Helicopter2GUI(x,y,z){
 
 
 function Helicopter3GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1335,10 +1302,10 @@ function Helicopter3GUI(x,y,z){
 
 
 function Helicopter4GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1378,10 +1345,10 @@ function Helicopter4GUI(x,y,z){
 
 
 function Helicopter5GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1421,10 +1388,10 @@ function Helicopter5GUI(x,y,z){
 
 
 function Helicopter6GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1464,10 +1431,10 @@ function Helicopter6GUI(x,y,z){
 
 
 function Helicopter7GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1507,10 +1474,10 @@ function Helicopter7GUI(x,y,z){
 
 
 function Helicopter9GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1550,10 +1517,10 @@ function Helicopter9GUI(x,y,z){
 
 
 function Helicopter10GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1593,10 +1560,10 @@ function Helicopter10GUI(x,y,z){
 
 
 function Helicopter11GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1636,10 +1603,10 @@ function Helicopter11GUI(x,y,z){
 
 
 function Helicopter12GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1679,10 +1646,10 @@ function Helicopter12GUI(x,y,z){
 
 
 function Helicopter13GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1722,10 +1689,10 @@ function Helicopter13GUI(x,y,z){
 
 
 function Helicopter14GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1765,10 +1732,10 @@ function Helicopter14GUI(x,y,z){
 
 
 function Helicopter15GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1808,10 +1775,10 @@ function Helicopter15GUI(x,y,z){
 
 
 function Helicopter16GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1851,10 +1818,10 @@ function Helicopter16GUI(x,y,z){
 
 
 function Helicopter17GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1894,10 +1861,10 @@ function Helicopter17GUI(x,y,z){
 
 
 function Helicopter18GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1937,10 +1904,10 @@ function Helicopter18GUI(x,y,z){
 
 
 function Helicopter19GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1980,10 +1947,10 @@ function Helicopter19GUI(x,y,z){
 
 
 function Helicopter20GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2023,10 +1990,10 @@ function Helicopter20GUI(x,y,z){
 
 
 function Helicopter21GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2066,10 +2033,10 @@ function Helicopter21GUI(x,y,z){
 
 
 function Helicopter22GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2109,10 +2076,10 @@ function Helicopter22GUI(x,y,z){
 
 
 function Helicopter23GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2152,10 +2119,10 @@ function Helicopter23GUI(x,y,z){
 
 
 function Helicopter24GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2195,10 +2162,10 @@ function Helicopter24GUI(x,y,z){
 
 
 function Helicopter25GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2238,10 +2205,10 @@ function Helicopter25GUI(x,y,z){
 
 
 function Helicopter26GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2281,10 +2248,10 @@ function Helicopter26GUI(x,y,z){
 
 
 function Helicopter27GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2324,10 +2291,10 @@ function Helicopter27GUI(x,y,z){
 
 
 function Helicopter28GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2367,10 +2334,10 @@ function Helicopter28GUI(x,y,z){
 
 
 function Helicopter29GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2410,10 +2377,10 @@ function Helicopter29GUI(x,y,z){
 
 
 function Helicopter30GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx);
+				var popup = new android.app.AlertDialog.Builder(root);
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){

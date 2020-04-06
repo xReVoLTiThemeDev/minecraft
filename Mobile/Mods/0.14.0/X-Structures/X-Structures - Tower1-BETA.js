@@ -26,36 +26,12 @@ var textsize = 12
 var structure
 var firstStructure
 
-/*
-var directory = new android.graphics.BitmapFactory.decodeFile("/mnt/sdcard/Modz/xReVoLTsLogo.jpg");
-var img = new android.graphics.drawable.BitmapDrawable(directory); 
-var image = new android.widget.ImageView(ctx);
-var buttonWindow = null;
-*/
-
 ModPE.setItem(structureSelectorId,"spawn_egg",7,"X-Structure - Pixel Art1")
 ModPE.setItem(structureBuilderId,"spawn_egg",5,"Structure Pixel Art1")
 Player.addItemCreativeInv(structureSelectorId,1,0)
 Player.addItemCreativeInv(structureBuilderId,1,0)
 Item.addCraftRecipe(structureSelectorId,1,0,[265,4,0,264,1,0,265,4,0])
 Item.addCraftRecipe(structureBuilderId,1,0,[265,3,0,264,1,0,265,1,0,264,1,0,265,3,0])
-
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
 
 function procCmd(cmd)
 {
@@ -513,10 +489,6 @@ function useItem(x,y,z,itemId,blockId,side){
         else if(structure == 26) Tower25GUI(x,y,z)
         else if(structure == 28) Tower26GUI(x,y,z)
         else if(structure == 29) Tower27GUI(x,y,z)
-/*
-        else if(structure == ) GUI(x,y,z)
-*/
-
  	}
 }
 
@@ -531,12 +503,6 @@ function housesGUI(){
 				var dialog = new android.app.Dialog(ctx); 
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure")
-/*
-                buttonWindow = new android.widget.PopupWindow()
-                image.setBitmap(img);
-                buttonWindow.setTouchable(false);
-*/
-
 
 /* 1 */	var  Tower1 = new android.widget.Button(ctx); 
 				Tower1.setOnClickListener(new android.view.View.OnClickListener(){

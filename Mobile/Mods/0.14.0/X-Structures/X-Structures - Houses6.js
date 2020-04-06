@@ -20,7 +20,7 @@ function newLevel(){
 
 var structureSelectorId = 1111
 var structureBuilderId = 1112
-var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var root = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var textsize = 12
 var structure
 var firstStructure
@@ -31,23 +31,6 @@ Player.addItemCreativeInv(structureSelectorId,1,0)
 Player.addItemCreativeInv(structureBuilderId,1,0)
 Item.addCraftRecipe(structureSelectorId,1,0,[265,4,0,264,1,0,265,4,0])
 Item.addCraftRecipe(structureBuilderId,1,0,[265,3,0,264,1,0,265,1,0,264,1,0,265,3,0])
-
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
 
 function procCmd(cmd)
 {
@@ -503,18 +486,18 @@ function useItem(x,y,z,itemId,blockId,side){
 }
 
 function housesGUI(){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var menu = new android.widget.LinearLayout(ctx);
-				var scroll = new android.widget.ScrollView(ctx);
+				var menu = new android.widget.LinearLayout(root);
+				var scroll = new android.widget.ScrollView(root);
 				menu.setOrientation(android.widget.LinearLayout.VERTICAL);
 				scroll.addView(menu);
-				var dialog = new android.app.Dialog(ctx); 
+				var dialog = new android.app.Dialog(root); 
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure")
 
-/* 1 */	var  ModernHouse84 = new android.widget.Button(ctx); 
+/* 1 */	var  ModernHouse84 = new android.widget.Button(root); 
 				ModernHouse84.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -531,7 +514,7 @@ function housesGUI(){
 				ModernHouse84.setTextSize(textsize)
 				menu.addView(ModernHouse84);
 
-/* 2 */	var  ModernHouse85 = new android.widget.Button(ctx); 
+/* 2 */	var  ModernHouse85 = new android.widget.Button(root); 
 				ModernHouse85.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -548,7 +531,7 @@ function housesGUI(){
 				ModernHouse85.setTextSize(textsize)
 				menu.addView(ModernHouse85);
 
-/* 3 */	var  ModernHouse86 = new android.widget.Button(ctx); 
+/* 3 */	var  ModernHouse86 = new android.widget.Button(root); 
 				ModernHouse86.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -565,7 +548,7 @@ function housesGUI(){
 				ModernHouse86.setTextSize(textsize)
 				menu.addView(ModernHouse86);
 
-/* 4 */	var  ModernHouse87 = new android.widget.Button(ctx); 
+/* 4 */	var  ModernHouse87 = new android.widget.Button(root); 
 				ModernHouse87.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -582,7 +565,7 @@ function housesGUI(){
 				ModernHouse87.setTextSize(textsize)
 				menu.addView(ModernHouse87);
 
-/* 5 */	var  ModernHouse88 = new android.widget.Button(ctx); 
+/* 5 */	var  ModernHouse88 = new android.widget.Button(root); 
 				ModernHouse88.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -599,7 +582,7 @@ function housesGUI(){
 				ModernHouse88.setTextSize(textsize)
 				menu.addView(ModernHouse88);
 
-/* 6 */	var  ModernHouse89 = new android.widget.Button(ctx); 
+/* 6 */	var  ModernHouse89 = new android.widget.Button(root); 
 				ModernHouse89.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -616,7 +599,7 @@ function housesGUI(){
 				ModernHouse89.setTextSize(textsize)
 				menu.addView(ModernHouse89);
 
-/* 8 */	var  ModernHouse90 = new android.widget.Button(ctx); 
+/* 8 */	var  ModernHouse90 = new android.widget.Button(root); 
 				ModernHouse90.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -633,7 +616,7 @@ function housesGUI(){
 				ModernHouse90.setTextSize(textsize)
 				menu.addView(ModernHouse90);
 
-/* 9 */	var  ModernHouse91 = new android.widget.Button(ctx); 
+/* 9 */	var  ModernHouse91 = new android.widget.Button(root); 
 				ModernHouse91.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -650,7 +633,7 @@ function housesGUI(){
 				ModernHouse91.setTextSize(textsize)
 				menu.addView(ModernHouse91);
 
-/* 10 */	var  ModernHouse92 = new android.widget.Button(ctx); 
+/* 10 */	var  ModernHouse92 = new android.widget.Button(root); 
 				ModernHouse92.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -667,7 +650,7 @@ function housesGUI(){
 				ModernHouse92.setTextSize(textsize)
 				menu.addView(ModernHouse92);
 
-/* 11 */	var  ModernHouse93 = new android.widget.Button(ctx); 
+/* 11 */	var  ModernHouse93 = new android.widget.Button(root); 
 				ModernHouse93.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -684,7 +667,7 @@ function housesGUI(){
 				ModernHouse93.setTextSize(textsize)
 				menu.addView(ModernHouse93);
 
-/* 12 */	var  ModernHouse94 = new android.widget.Button(ctx); 
+/* 12 */	var  ModernHouse94 = new android.widget.Button(root); 
 				ModernHouse94.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -701,7 +684,7 @@ function housesGUI(){
 				ModernHouse94.setTextSize(textsize)
 				menu.addView(ModernHouse94);
 
-/* 13 */	var  ModernHouse95 = new android.widget.Button(ctx); 
+/* 13 */	var  ModernHouse95 = new android.widget.Button(root); 
 				ModernHouse95.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -718,7 +701,7 @@ function housesGUI(){
 				ModernHouse95.setTextSize(textsize)
 				menu.addView(ModernHouse95);
 
-/* 14 */	var  ModernHouse96 = new android.widget.Button(ctx); 
+/* 14 */	var  ModernHouse96 = new android.widget.Button(root); 
 				ModernHouse96.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -735,7 +718,7 @@ function housesGUI(){
 				ModernHouse96.setTextSize(textsize)
 				menu.addView(ModernHouse96);
 
-/* 15 */	var  ModernHouse97 = new android.widget.Button(ctx); 
+/* 15 */	var  ModernHouse97 = new android.widget.Button(root); 
 				ModernHouse97.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -752,7 +735,7 @@ function housesGUI(){
 				ModernHouse97.setTextSize(textsize)
 				menu.addView(ModernHouse97);
 
-/* 16 */	var  ModernHouse98 = new android.widget.Button(ctx); 
+/* 16 */	var  ModernHouse98 = new android.widget.Button(root); 
 				ModernHouse98.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -769,7 +752,7 @@ function housesGUI(){
 				ModernHouse98.setTextSize(textsize)
 				menu.addView(ModernHouse98);
 
-/* 17 */	var  ModernHouse99 = new android.widget.Button(ctx); 
+/* 17 */	var  ModernHouse99 = new android.widget.Button(root); 
 				ModernHouse99.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -786,7 +769,7 @@ function housesGUI(){
 				ModernHouse99.setTextSize(textsize)
 				menu.addView(ModernHouse99);
 
-/* 18 */	var  ModernHouse100 = new android.widget.Button(ctx); 
+/* 18 */	var  ModernHouse100 = new android.widget.Button(root); 
 				ModernHouse100.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -803,7 +786,7 @@ function housesGUI(){
 				ModernHouse100.setTextSize(textsize)
 				menu.addView(ModernHouse100);
 
-/* 19 */	var  ModernHouse101 = new android.widget.Button(ctx); 
+/* 19 */	var  ModernHouse101 = new android.widget.Button(root); 
 				ModernHouse101.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -820,7 +803,7 @@ function housesGUI(){
 				ModernHouse101.setTextSize(textsize)
 				menu.addView(ModernHouse101);
 
-/* 20 */	var  ModernHouse102 = new android.widget.Button(ctx); 
+/* 20 */	var  ModernHouse102 = new android.widget.Button(root); 
 				ModernHouse102.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -837,7 +820,7 @@ function housesGUI(){
 				ModernHouse102.setTextSize(textsize)
 				menu.addView(ModernHouse102);
 
-/* 21 */	var  ModernHouse103 = new android.widget.Button(ctx); 
+/* 21 */	var  ModernHouse103 = new android.widget.Button(root); 
 				ModernHouse103.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -864,10 +847,10 @@ function housesGUI(){
 }
 
 function ModernHouse84GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -905,10 +888,10 @@ function ModernHouse84GUI(x,y,z){
 }
 
 function ModernHouse85GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -946,10 +929,10 @@ function ModernHouse85GUI(x,y,z){
 }
 
 function ModernHouse86GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -988,10 +971,10 @@ function ModernHouse86GUI(x,y,z){
 
 function ModernHouse87GUI(x,y,z)
 
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1029,10 +1012,10 @@ function ModernHouse87GUI(x,y,z)
 }
 
 function ModernHouse88GUI(x,y,z)
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1070,10 +1053,10 @@ function ModernHouse88GUI(x,y,z)
 }
 
 function ModernHouse89GUI(x,y,z)
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1111,10 +1094,10 @@ function ModernHouse89GUI(x,y,z)
 }
 
 function ModernHouse90GUI(x,y,z)
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1152,10 +1135,10 @@ function ModernHouse90GUI(x,y,z)
 }
 
 function ModernHouse91GUI(x,y,z)
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1193,10 +1176,10 @@ function ModernHouse91GUI(x,y,z)
 }
 
 function ModernHouse92GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1234,10 +1217,10 @@ function ModernHouse92GUI(x,y,z){
 }
 
 function ModernHouse93GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1275,10 +1258,10 @@ function ModernHouse93GUI(x,y,z){
 }
 
 function ModernHouse94GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1316,10 +1299,10 @@ function ModernHouse94GUI(x,y,z){
 }
 
 function ModernHouse95GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1357,10 +1340,10 @@ function ModernHouse95GUI(x,y,z){
 }
 
 function ModernHouse96GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1398,10 +1381,10 @@ function ModernHouse96GUI(x,y,z){
 }
 
 function ModernHouse97GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1439,10 +1422,10 @@ function ModernHouse97GUI(x,y,z){
 }
 
 function ModernHouse98GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1480,10 +1463,10 @@ function ModernHouse98GUI(x,y,z){
 }
 
 function ModernHouse99GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1521,10 +1504,10 @@ function ModernHouse99GUI(x,y,z){
 }
 
 function ModernHouse100GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1562,10 +1545,10 @@ function ModernHouse100GUI(x,y,z){
 }
 
 function ModernHouse101GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1603,10 +1586,10 @@ function ModernHouse101GUI(x,y,z){
 }
 
 function ModernHouse102GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1644,10 +1627,10 @@ function ModernHouse102GUI(x,y,z){
 }
 
 function ModernHouse103GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 360){

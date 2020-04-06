@@ -21,17 +21,10 @@ function newLevel(){
 
 var structureSelectorId = 1305
 var structureBuilderId = 1306
-var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var root = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var textsize = 12
 var structure
 var firstStructure
-
-/*
-var directory = new android.graphics.BitmapFactory.decodeFile("/mnt/sdcard/Modz/xReVoLTsLogo.jpg");
-var img = new android.graphics.drawable.BitmapDrawable(directory); 
-var image = new android.widget.ImageView(ctx);
-var buttonWindow = null;
-*/
 
 ModPE.setItem(structureSelectorId,"spawn_egg",7,"X-Structure - Pixel Art3")
 ModPE.setItem(structureBuilderId,"spawn_egg",5,"Structure Pixel Art3")
@@ -39,23 +32,6 @@ Player.addItemCreativeInv(structureSelectorId,1,0)
 Player.addItemCreativeInv(structureBuilderId,1,0)
 Item.addCraftRecipe(structureSelectorId,1,0,[265,4,0,264,1,0,265,4,0])
 Item.addCraftRecipe(structureBuilderId,1,0,[265,3,0,264,1,0,265,1,0,264,1,0,265,3,0])
-
-/*
-
-//Check for updates
-function newLevel(){
-	try{
-		var out=new java.io.ByteArrayOutputStream();
-		var response=android.net.http.AndroidHttpClient.newInstance("Online()").execute(new org.apache.http.client.methods.HttpGet("https://raw.githubusercontent.com/wilco375/Minecraft-PE-Mod-Scripts/master/ISM_V0.8.6_update_checker.txt")).getEntity().writeTo(out);
-		out.close();
-		clientMessage(String(out.toString()))
-	}
-	catch(e){
-		clientMessage("[ISM] Failed update check: no internet connection.")
-	}
-}
-
-*/
 
 function procCmd(cmd)
 {
@@ -523,32 +499,22 @@ function useItem(x,y,z,itemId,blockId,side){
         else if(structure == 36) OlimarGUI(x,y,z)
         else if(structure == 37) OnePieceGUI(x,y,z)
         else if(structure == 38) OnePieceMonkeyLuffyGUI(x,y,z)
-/*
-        else if(structure == ) GUI(x,y,z)
-*/
-
  	}
 }
 
 function housesGUI(){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var menu = new android.widget.LinearLayout(ctx);
-				var scroll = new android.widget.ScrollView(ctx);
+				var menu = new android.widget.LinearLayout(root);
+				var scroll = new android.widget.ScrollView(root);
 				menu.setOrientation(android.widget.LinearLayout.VERTICAL);
 				scroll.addView(menu);
-				var dialog = new android.app.Dialog(ctx); 
+				var dialog = new android.app.Dialog(root); 
 				dialog.setContentView(scroll);
 				dialog.setTitle("Choose a structure")
-/*
-                buttonWindow = new android.widget.PopupWindow()
-                image.setBitmap(img);
-                buttonWindow.setTouchable(false);
-*/
 
-
-/* 1 */	var  IndianaJones = new android.widget.Button(ctx); 
+/* 1 */	var  IndianaJones = new android.widget.Button(root); 
 				IndianaJones.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -566,7 +532,7 @@ function housesGUI(){
 				menu.addView(IndianaJones);
 
 
-/* 2 */	var  IronSword = new android.widget.Button(ctx); 
+/* 2 */	var  IronSword = new android.widget.Button(root); 
 				IronSword.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -584,7 +550,7 @@ function housesGUI(){
 				menu.addView(IronSword);
 
 
-/* 3 */	var  IronMan = new android.widget.Button(ctx); 
+/* 3 */	var  IronMan = new android.widget.Button(root); 
 				IronMan.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -602,7 +568,7 @@ function housesGUI(){
 				menu.addView(IronMan);
 
 
-/* 4 */	var  JackSparrow = new android.widget.Button(ctx); 
+/* 4 */	var  JackSparrow = new android.widget.Button(root); 
 				JackSparrow.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -620,7 +586,7 @@ function housesGUI(){
 				menu.addView(JackSparrow);
 
 
-/* 5 */	var  Jeff = new android.widget.Button(ctx); 
+/* 5 */	var  Jeff = new android.widget.Button(root); 
 				Jeff.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -638,7 +604,7 @@ function housesGUI(){
 				menu.addView(Jeff);
 
 
-/* 6 */	var  JohnnyBravo = new android.widget.Button(ctx); 
+/* 6 */	var  JohnnyBravo = new android.widget.Button(root); 
 				JohnnyBravo.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -656,7 +622,7 @@ function housesGUI(){
 				menu.addView(JohnnyBravo);
 
 
-/* 7 */	var  Kermit1 = new android.widget.Button(ctx); 
+/* 7 */	var  Kermit1 = new android.widget.Button(root); 
 				Kermit1.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -674,7 +640,7 @@ function housesGUI(){
 				menu.addView(Kermit1);
 
 
-/* 8 */	var  KermitTheFrog = new android.widget.Button(ctx); 
+/* 8 */	var  KermitTheFrog = new android.widget.Button(root); 
 				KermitTheFrog.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -692,7 +658,7 @@ function housesGUI(){
 				menu.addView(KermitTheFrog);
 
 
-/* 9 */	var  Kirby = new android.widget.Button(ctx); 
+/* 9 */	var  Kirby = new android.widget.Button(root); 
 				Kirby.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -710,7 +676,7 @@ function housesGUI(){
 				menu.addView(Kirby);
 
 
-/* 10 */	var  Knuckles = new android.widget.Button(ctx); 
+/* 10 */	var  Knuckles = new android.widget.Button(root); 
 				Knuckles.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -728,7 +694,7 @@ function housesGUI(){
 				menu.addView(Knuckles);
 
 
-/* 11 */	var  Knuckles1 = new android.widget.Button(ctx); 
+/* 11 */	var  Knuckles1 = new android.widget.Button(root); 
 				Knuckles1.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -746,7 +712,7 @@ function housesGUI(){
 				menu.addView(Knuckles1);
 
 
-/* 12 */	var  LavaBucket = new android.widget.Button(ctx); 
+/* 12 */	var  LavaBucket = new android.widget.Button(root); 
 				LavaBucket.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -764,7 +730,7 @@ function housesGUI(){
 				menu.addView(LavaBucket);
 
 
-/* 13 */	var  LeafPad = new android.widget.Button(ctx); 
+/* 13 */	var  LeafPad = new android.widget.Button(root); 
 				LeafPad.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -782,7 +748,7 @@ function housesGUI(){
 				menu.addView(LeafPad);
 
 
-/* 14 */	var  LoLCat = new android.widget.Button(ctx); 
+/* 14 */	var  LoLCat = new android.widget.Button(root); 
 				LoLCat.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -800,7 +766,7 @@ function housesGUI(){
 				menu.addView(LoLCat);
 
 
-/* 15 */	var  LOLFace = new android.widget.Button(ctx); 
+/* 15 */	var  LOLFace = new android.widget.Button(root); 
 				LOLFace.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -818,7 +784,7 @@ function housesGUI(){
 				menu.addView(LOLFace);
 
 
-/* 16 */	var  MarioAndYoshi = new android.widget.Button(ctx); 
+/* 16 */	var  MarioAndYoshi = new android.widget.Button(root); 
 				MarioAndYoshi.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -836,7 +802,7 @@ function housesGUI(){
 				menu.addView(MarioAndYoshi);
 
 
-/* 17 */	var  MarioGhost = new android.widget.Button(ctx); 
+/* 17 */	var  MarioGhost = new android.widget.Button(root); 
 				MarioGhost.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -854,7 +820,7 @@ function housesGUI(){
 				menu.addView(MarioGhost);
 
 
-/* 18 */	var  MarioStar = new android.widget.Button(ctx); 
+/* 18 */	var  MarioStar = new android.widget.Button(root); 
 				MarioStar.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -872,7 +838,7 @@ function housesGUI(){
 				menu.addView(MarioStar);
 
 
-/* 19 */	var  MetaKnight = new android.widget.Button(ctx); 
+/* 19 */	var  MetaKnight = new android.widget.Button(root); 
 				MetaKnight.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -890,7 +856,7 @@ function housesGUI(){
 				menu.addView(MetaKnight);
 
 
-/* 20 */	var  MilkBucket = new android.widget.Button(ctx); 
+/* 20 */	var  MilkBucket = new android.widget.Button(root); 
 				MilkBucket.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -908,7 +874,7 @@ function housesGUI(){
 				menu.addView(MilkBucket);
 
 
-/* 21 */	var  MiniLink = new android.widget.Button(ctx); 
+/* 21 */	var  MiniLink = new android.widget.Button(root); 
 				MiniLink.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -926,7 +892,7 @@ function housesGUI(){
 				menu.addView(MiniLink);
 
 
-/* 22 */	var  MiniLinkSword = new android.widget.Button(ctx); 
+/* 22 */	var  MiniLinkSword = new android.widget.Button(root); 
 				MiniLinkSword.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -944,7 +910,7 @@ function housesGUI(){
 				menu.addView(MiniLinkSword);
 
 
-/* 23 */	var  Minion = new android.widget.Button(ctx); 
+/* 23 */	var  Minion = new android.widget.Button(root); 
 				Minion.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -962,7 +928,7 @@ function housesGUI(){
 				menu.addView(Minion);
 
 
-/* 24 */	var  MozillaFox = new android.widget.Button(ctx); 
+/* 24 */	var  MozillaFox = new android.widget.Button(root); 
 				MozillaFox.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -980,7 +946,7 @@ function housesGUI(){
 				menu.addView(MozillaFox);
 
 
-/* 25 */	var  MrGarrison = new android.widget.Button(ctx); 
+/* 25 */	var  MrGarrison = new android.widget.Button(root); 
 				MrGarrison.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -998,7 +964,7 @@ function housesGUI(){
 				menu.addView(MrGarrison);
 
 
-/* 26 */	var  MrMacky = new android.widget.Button(ctx); 
+/* 26 */	var  MrMacky = new android.widget.Button(root); 
 				MrMacky.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1016,7 +982,7 @@ function housesGUI(){
 				menu.addView(MrMacky);
 
 
-/* 28 */	var  MrPringels = new android.widget.Button(ctx); 
+/* 28 */	var  MrPringels = new android.widget.Button(root); 
 				MrPringels.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1034,7 +1000,7 @@ function housesGUI(){
 				menu.addView(MrPringels);
 
 
-/* 29 */	var  Mushroom = new android.widget.Button(ctx); 
+/* 29 */	var  Mushroom = new android.widget.Button(root); 
 				Mushroom.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1052,7 +1018,7 @@ function housesGUI(){
 				menu.addView(Mushroom);
 
 
-/* 30 */	var  NaughtyPaperclipMessage = new android.widget.Button(ctx); 
+/* 30 */	var  NaughtyPaperclipMessage = new android.widget.Button(root); 
 				NaughtyPaperclipMessage.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1070,7 +1036,7 @@ function housesGUI(){
 				menu.addView(NaughtyPaperclipMessage);
 
 
-/* 32 */	var  NelsonMunts = new android.widget.Button(ctx); 
+/* 32 */	var  NelsonMunts = new android.widget.Button(root); 
 				NelsonMunts.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1088,7 +1054,7 @@ function housesGUI(){
 				menu.addView(NelsonMunts);
 
 
-/* 33 */	var  NewEnglandPatriots = new android.widget.Button(ctx); 
+/* 33 */	var  NewEnglandPatriots = new android.widget.Button(root); 
 				NewEnglandPatriots.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1106,7 +1072,7 @@ function housesGUI(){
 				menu.addView(NewEnglandPatriots);
 
 
-/* 34 */	var  NyanCat = new android.widget.Button(ctx); 
+/* 34 */	var  NyanCat = new android.widget.Button(root); 
 				NyanCat.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1124,7 +1090,7 @@ function housesGUI(){
 				menu.addView(NyanCat);
 
 
-/* 35 */	var  Obama = new android.widget.Button(ctx); 
+/* 35 */	var  Obama = new android.widget.Button(root); 
 				Obama.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1142,7 +1108,7 @@ function housesGUI(){
 				menu.addView(Obama);
 
 
-/* 36 */	var  Olimar = new android.widget.Button(ctx); 
+/* 36 */	var  Olimar = new android.widget.Button(root); 
 				Olimar.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1160,7 +1126,7 @@ function housesGUI(){
 				menu.addView(Olimar);
 
 
-/* 37 */	var  OnePiece = new android.widget.Button(ctx); 
+/* 37 */	var  OnePiece = new android.widget.Button(root); 
 				OnePiece.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1178,7 +1144,7 @@ function housesGUI(){
 				menu.addView(OnePiece);
 
 
-/* 38 */	var  OnePieceMonkeyLuffy = new android.widget.Button(ctx); 
+/* 38 */	var  OnePieceMonkeyLuffy = new android.widget.Button(root); 
 				OnePieceMonkeyLuffy.setOnClickListener(new android.view.View.OnClickListener(){
 					onClick: function(){ 
 						try{
@@ -1207,10 +1173,10 @@ function housesGUI(){
 
 
 function IndianaJonesGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Continue structure transaction?")
 				yaw = getYaw()
 				while(yaw > 60){
@@ -1250,10 +1216,10 @@ function IndianaJonesGUI(x,y,z){
 
 
 function IronSwordGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1293,10 +1259,10 @@ function IronSwordGUI(x,y,z){
 
 
 function IronManGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1336,10 +1302,10 @@ function IronManGUI(x,y,z){
 
 
 function JackSparrowGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1379,10 +1345,10 @@ function JackSparrowGUI(x,y,z){
 
 
 function JeffGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1422,10 +1388,10 @@ function JeffGUI(x,y,z){
 
 
 function JohnnyBravoGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1465,10 +1431,10 @@ function JohnnyBravoGUI(x,y,z){
 
 
 function Kermit1GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1508,10 +1474,10 @@ function Kermit1GUI(x,y,z){
 
 
 function KermitTheFrogGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1551,10 +1517,10 @@ function KermitTheFrogGUI(x,y,z){
 
 
 function AttackOnTitanGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1594,10 +1560,10 @@ function AttackOnTitanGUI(x,y,z){
 
 
 function KnucklesGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1637,10 +1603,10 @@ function KnucklesGUI(x,y,z){
 
 
 function Knuckles1GUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1680,10 +1646,10 @@ function Knuckles1GUI(x,y,z){
 
 
 function LavaBucketGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1723,10 +1689,10 @@ function LavaBucketGUI(x,y,z){
 
 
 function LeafPadGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1766,10 +1732,10 @@ function LeafPadGUI(x,y,z){
 
 
 function LoLCatGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1809,10 +1775,10 @@ function LoLCatGUI(x,y,z){
 
 
 function LOLFaceGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1852,10 +1818,10 @@ function LOLFaceGUI(x,y,z){
 
 
 function MarioAndYoshiGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1895,10 +1861,10 @@ function MarioAndYoshiGUI(x,y,z){
 
 
 function MarioGhostGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1938,10 +1904,10 @@ function MarioGhostGUI(x,y,z){
 
 
 function MarioStarGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -1981,10 +1947,10 @@ function MarioStarGUI(x,y,z){
 
 
 function MetaKnightGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2024,10 +1990,10 @@ function MetaKnightGUI(x,y,z){
 
 
 function MilkBucketGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2067,10 +2033,10 @@ function MilkBucketGUI(x,y,z){
 
 
 function MiniLinkGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2110,10 +2076,10 @@ function MiniLinkGUI(x,y,z){
 
 
 function MiniLinkSwordGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2153,10 +2119,10 @@ function MiniLinkSwordGUI(x,y,z){
 
 
 function MinionGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2196,10 +2162,10 @@ function MinionGUI(x,y,z){
 
 
 function MozillaFoxGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2239,10 +2205,10 @@ function MozillaFoxGUI(x,y,z){
 
 
 function MrGarrisonGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2282,10 +2248,10 @@ function MrGarrisonGUI(x,y,z){
 
 
 function MrMackyGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2325,10 +2291,10 @@ function MrMackyGUI(x,y,z){
 
 
 function MrPringelsGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2368,10 +2334,10 @@ function MrPringelsGUI(x,y,z){
 
 
 function MushroomGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2411,10 +2377,10 @@ function MushroomGUI(x,y,z){
 
 
 function NaughtyPaperclipMessageGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2454,10 +2420,10 @@ function NaughtyPaperclipMessageGUI(x,y,z){
 
 
 function NelsonMuntsGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2497,10 +2463,10 @@ function NelsonMuntsGUI(x,y,z){
 
 
 function NewEnglandPatriotsGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2540,10 +2506,10 @@ function NewEnglandPatriotsGUI(x,y,z){
 
 
 function NyanCatGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2583,10 +2549,10 @@ function NyanCatGUI(x,y,z){
 
 
 function ObamaGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2626,10 +2592,10 @@ function ObamaGUI(x,y,z){
 
 
 function OlimarGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2669,10 +2635,10 @@ function OlimarGUI(x,y,z){
 
 
 function OnePieceGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
@@ -2712,10 +2678,10 @@ function OnePieceGUI(x,y,z){
 
 
 function OnePieceMonkeyLuffyGUI(x,y,z){
-	ctx.runOnUiThread(new java.lang.Runnable(){
+	root.runOnUiThread(new java.lang.Runnable(){
 		run: function(){
 			try{
-				var popup = new android.app.AlertDialog.Builder(ctx); 
+				var popup = new android.app.AlertDialog.Builder(root); 
 				popup.setTitle("Are you sure?")
 				yaw = getYaw()
 				while(yaw > 360){
